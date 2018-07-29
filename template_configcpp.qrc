@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>template_configcpp.txt</file>
+    </qresource>
+</RCC>

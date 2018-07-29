@@ -1,0 +1,145 @@
+
+class CfgPatches
+{
+	class CLASSNAME_cfg
+	{
+		units[] =
+		{
+			"CLASSNAME"
+		};
+		weapons[] = {};
+		requiredVersion = 1;
+		requiredAddons[] =
+		{
+			"A3_Map_Stratis"
+		};
+	};
+};
+
+class CfgWorldList
+{
+	class CLASSNAME{};
+};
+
+class CfgWorlds
+{
+	class Stratis;
+	class CLASSNAME: Stratis
+	{
+		cutscenes[] = {};
+		description = "TERRAINNAME";
+		worldName = "\NAMESPACE\CLASSNAME\CLASSNAME.wrp";
+		author = "AUTHORNAME";
+		pictureMap = "NAMESPACE\CLASSNAME\data\picturemap_ca.paa";
+		pictureShot = "NAMESPACE\CLASSNAME\data\ui_terrain_ca.paa";
+
+		newRoadsShape = "\NAMESPACE\CLASSNAME\data\roads\roads.shp";
+
+/*
+		// lat
+		// lon
+		latitude = ;
+		longitude = ;
+		mapZone = ;
+		mapArea[] =
+		{
+			, , // bottom left
+			,  // top right
+		};
+*/
+		mapSize = TERRAINSIZE;
+		centerPosition[] =
+		{
+			TERRAINHALFSIZE, TERRAINHALFSIZE
+		};
+		ilsDirection[] =
+		{
+			0, 0.08, 1
+		};
+		ilsPosition[] =
+		{
+			0, 0
+		};
+		ilsTaxiIn[] = {};
+		ilsTaxiOff[] = {};
+		drawTaxiway = 0;
+		class SecondaryAirports{};
+		class ReplaceObjects{};
+
+		class Sounds
+		{
+			sounds[] = {};
+		};
+
+		class Animation
+		{
+			vehicles[] = {};
+		};
+
+		class Grid
+		{
+			offsetX = 0;
+			offsetY = TERRAINSIZE; // Grid * Cell
+
+			class Zoom1
+			{
+				zoomMax = 0.015;
+				format = "XY";
+				formatX = "0000";
+				formatY = "0000";
+				stepX = 10;
+				stepY = -10;
+			};
+
+			class Zoom2
+			{
+				zoomMax = 0.2;
+				format = "XY";
+				formatX = "000";
+				formatY = "000";
+				stepX = 100;
+				stepY = -100;
+			};
+
+			class Zoom3
+			{
+				zoomMax = 0.8;
+				format = "XY";
+				formatX = "00";
+				formatY = "00";
+				stepX = 1000;
+				stepY = -1000;
+			};
+
+			class Zoom4
+			{
+				zoomMax = 1;
+				format = "XY";
+				formatX = "0";
+				formatY = "0";
+				stepX = 10000;
+				stepY = -10000;
+			};
+		};
+
+		class Names
+		{
+			//#include "names.hpp"
+		};
+
+		// new satellite vs detail texture blending setup
+		/// maximal darkening coef for blending of satellite map and detail map on terrain (default = 0.0f, no darkening = 1.0f}
+		terrainBlendMaxDarkenCoef = "1.0f";
+		
+		/// maximal brightening coef for blending of satellite map and detail map on terrain (default = 1.0f, no brightening = 0.0f)
+		terrainBlendMaxBrightenCoef = "0.0f";
+
+		// disable the stupid bis loading texts
+		loadingTexts[] =
+		{
+			"This config.cpp was created with Terrain Config.cpp Creator (c) PMC.",
+			"PMC Editing Wiki https://pmc.editing.wiki",
+			"TERRAINNAME is created by AUTHORNAME"
+		};
+	};
+};
